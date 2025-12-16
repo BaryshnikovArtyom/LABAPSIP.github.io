@@ -1,0 +1,12 @@
+[
+  { "id": 1, "name": "Кухня SLONIM", "price": 11654, "image": "image/NR1.png", "category": "Loft" },
+  { "id": 2, "name": "Кухня Milano", "price": 9845, "image": "image/NR2.png", "category": "Modern" },
+  { "id": 3, "name": "Кухня Florence", "price": 13275, "image": "image/NR3.png", "category": "Classic" },
+  { "id": 4, "name": "Кухня Venice", "price": 10990, "image": "image/NR1.png", "category": "Loft" },
+  { "id": 5, "name": "Кухня Rome", "price": 12450, "image": "image/NR2.png", "category": "Modern" },
+  { "id": 6, "name": "Кухня Naples", "price": 8750, "image": "image/NR3.png", "category": "Provence" },
+  { "id": 7, "name": "Кухня Turin", "price": 14320, "image": "image/NR1.png", "category": "Hi-Tech" },
+  { "id": 8, "name": "Кухня Verona", "price": 11110, "image": "image/NR2.png", "category": "Classic" },
+  { "id": 9, "name": "Кухня Bologna", "price": 9999, "image": "image/NR3.png", "category": "Modern" },
+  { "id": 10, "name": "Кухня Palermo", "price": 15500, "image": "image/NR1.png", "category": "Luxury" }
+]

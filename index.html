@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Amatto - Кухни на заказ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500&family=Playfair+Display:wght@800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+    <script src="script.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+
+<body>
+ <nav class="navbar navbar-expand-lg bg-white py-3 sticky-top">
+  <!-- Полоса прокрутки (Событие Scroll) -->
+<div id="scrollProgress" class="scroll-progress"></div>
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="https://c.animaapp.com/mb6e6uyr72SZ5R/img/logo-en-black-2-1.png" alt="Amatto" height="40">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Главная</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">О Нас</a></li>
+        
+        <li class="nav-item dropdown" id="catalogMenu">
+          <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false">Каталог</a>
+          <!-- Подменю создастся через JS -->
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#">Рассрочка</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Блог</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Контакты</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" id="profileBtn"> <i class="fa fa-user"></i> Профиль</a></li>
+      </ul>
+
+      <div class="d-flex ms-lg-3 align-items-center">
+        <button type="button" class="btn btn-outline-secondary position-relative ms-2" id="cartBtn">
+  <i class="fa fa-shopping-cart"></i>
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount">
+    0
+  </span>
+</button>
+        <a class="btn btn-primary" href="tel:+37368159759">+373 68 159 759</a>
+        <div class="dropdown ms-2">
+          <button id="langToggle" class="btn btn-outline-secondary d-flex align-items-center gap-2" type="button" aria-expanded="false">
+            <span id="flag" class="flag-icon flag-ru"></span>
+            <span id="langText">RU</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+    <!-- Герой-секция -->
+    <div id="heroCarousel" class="hero-carousel-wrapper">
+      <div class="slides-wrapper">
+        <div class="slide active" style="background-image: url('image/SL1.jpg');"></div>
+        <div class="slide" style="background-image: url('image/SL2.jpg');"></div>
+        <div class="slide" style="background-image: url('image/SL3.jpg');"></div>
+        <div class="slide" style="background-image: url('image/SL4.jpg');"></div>
+      </div>
+
+      <div class="carousel-caption">
+        <h1 class="hero-title">КУХНИ НА ЗАКАЗ</h1>
+        <p class="hero-subtitle">Стильная кухня от производителя по цене на 20% ниже рынка</p>
+        <ul class="benefits-list">
+          <li><span class="highlight">Бесплатный</span> дизайн проект</li>
+          <li>Гарантия <span class="highlight">лучшей Цены</span></li>
+          <li>Производство от <span class="highlight">25 до 45 дней</span></li>
+          <li>Гарантийное <span class="highlight">обслуживание 5 лет</span></li>
+        </ul>
+        <button class="hero-btn">Бесплатная Консультация Дизайнера</button>
+      </div>
+
+      <div class="dots"></div>
+    </div>
+
+    <!-- Секция "Акция" -->
+   <section class="promo-wrapper">
+  <div class="promo-section">
+    <div class="promo-overlay"></div>
+
+    <div class="promo-content">
+      <h2>
+        <span>Закажи</span> 
+        <span class="text-yellow">Кухню</span>
+      </h2>
+      <div class="divider"></div>
+
+      <p>До 31 марта</p>
+      <p><strong>Получи</strong></p>
+
+      <div class="highlight">Посудомоечную машину</div>
+
+      <p><strong>В Подарок</strong></p>
+
+      <div class="countdown">
+        <div><span class="fake-days">04</span><br><small>Дней</small></div>
+        <div><span>:</span></div>
+        <div><span class="fake-hours">09</span><br><small>Часов</small></div>
+        <div><span>:</span></div>
+        <div><span class="fake-mins">34</span><br><small>Минут</small></div>
+        <div><span>:</span></div>
+        <div><span class="fake-secs">32</span><br><small>Секунд</small></div>
+      </div>
+    </div>
+
+    <img src="image/MI.png" alt="dishwasher" class="dishwasher-img">
+  </div>
+</section>
+
+    <!-- Секция "Каталог" (Замена старой секции) -->
+<section class="portfolio-section py-5" id="catalogSection">
+  <div class="container">
+    
+    <!-- Заголовок -->
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <h2 class="fw-bold mb-2 display-5" style="font-family: 'Playfair Display', serif;">Каталог Кухонь</h2>
+        <div class="yellow-divider mx-auto mb-3"></div>
+        <p class="text-muted">Выберите стиль вашей будущей кухни</p>
+      </div>
+    </div>
+
+    <!-- Панель управления (Фильтры и Сортировка) -->
+    <div class="row g-3 mb-5 align-items-center justify-content-between catalog-controls">
+      
+      <!-- Фильтры по стилям (Слева) -->
+      <div class="col-md-8 col-12">
+        <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-md-start" id="catalogFilters">
+          <!-- data-filter должно совпадать с category в JSON -->
+          <button type="button" class="catalog-filter-btn active" data-filter="all">Все</button>
+          <button type="button" class="catalog-filter-btn" data-filter="Loft">Loft</button>
+          <button type="button" class="catalog-filter-btn" data-filter="Modern">Modern</button>
+          <button type="button" class="catalog-filter-btn" data-filter="Classic">Classic</button>
+          <button type="button" class="catalog-filter-btn" data-filter="Provence">Provence</button>
+        </div>
+      </div>
+
+      <!-- Сортировка (Справа) -->
+      <div class="col-md-4 col-12">
+        <div class="position-relative">
+            <!-- Иконка для красоты -->
+            <i class="fas fa-sort-amount-down position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+            <select class="form-select catalog-sort-select ps-5" id="catalogSort">
+                <option value="default">Сортировка: По умолчанию</option>
+                <option value="price_asc">Цена: Сначала дешевле</option>
+                <option value="price_desc">Цена: Сначала дороже</option>
+                <option value="name">По названию (А-Я)</option>
+            </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Сетка товаров (Сюда JS будет добавлять карточки) -->
+    <div class="row g-4" id="portfolioGrid">
+      <!-- Здесь будет пусто, пока JS не загрузит товары -->
+    </div>
+
+    <!-- Кнопка "Показать еще" -->
+    <div class="text-center mt-5">
+      <button id="loadMoreBtn" class="btn btn-outline-dark rounded-pill px-5 py-2 fw-bold">
+        Показать ещё
+      </button>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Секция преимуществ -->
+    <section class="benefits-section py-5">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title mb-3">Наши преимущества</h2>
+                    <div class="yellow-divider"></div>
+                    <div class="title-divider mx-auto mb-4"></div>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Преимущество 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="benefit-card h-100">
+                        <div class="card-body text-center p-4">
+                            <img src="image/NP1.png" alt="Лучшая цена" class="benefit-icon img-fluid mb-3">
+                            <h3 class="benefit-title mb-3">Гарантия Лучшей Цены</h3>
+                            <p class="benefit-text">Мы Производители, Поэтому Сможем Предложить Вам Лучшую Стоимость.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Преимущество 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="benefit-card h-100">
+                        <div class="card-body text-center p-4">
+                            <img src="image/NP2.png" alt="Рассрочка" class="benefit-icon img-fluid mb-3">
+                            <h3 class="benefit-title mb-3">Оплата В рассрочку</h3>
+                            <p class="benefit-text">Получите Кухню Без Аванса, Оплачивайте Равными Платежами.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Преимущество 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="benefit-card h-100">
+                        <div class="card-body text-center p-4">
+                            <img src="image/NP3.png" alt="Быстрое производство" class="benefit-icon img-fluid mb-3">
+                            <h3 class="benefit-title mb-3">Быстрое производство</h3>
+                            <p class="benefit-text">Произведем Вашу Кухню По Индивидуальному Проекту За 25-45 Дней.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Преимущество 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="benefit-card h-100">
+                        <div class="card-body text-center p-4">
+                            <img src="image/NP4.png" alt="Гарантия" class="benefit-icon img-fluid mb-3">
+                            <h3 class="benefit-title mb-3">Гарантия качества</h3>
+                            <p class="benefit-text">100% Качество Без Брака. Пробный Монтаж Кухни В Цеху.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция ПРОМО -->
+    <section class="kitchen-promo">
+      <div class="promo-content">
+        <h2 class="promo-title">Закажи Кухню</h2>
+        <h4 class="promo-subtitle">И получи 10% скидку</h4>
+        <p class="promo-text">На всю бытовую технику в сети Bomba и Maximum</p>
+        <a href="#" class="promo-btn">Заказать Кухню</a>
+      </div>
+    </section>
+
+    <!-- Секция Видео -->
+  <section class="mission-section container">
+  <h2>Миссия Amatto</h2>
+  <div class="yellow-divider"></div>
+  <p>
+    Мы стремимся создать идеальное пространство, в котором человеку<br>
+    будет комфортно находиться, отдыхать, готовить и весело проводить<br>
+    время со своими друзьями и близкими.
+  </p>
+
+  <div class="video-container mx-auto">
+    <video autoplay muted playsinline controls>
+      <source src="image/FAM.mp4" type="video/mp4">
+      Ваш браузер не поддерживает воспроизведение видео.
+    </video>
+  </div>
+</section>
+    <!-- Секция "Скидка" -->
+    <!-- Секция "Скидка" -->
+<section class="installment-wrapper py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold title-heading">Покупай в рассрочку!</h2>
+      <div class="underline mx-auto mt-2"></div>
+    </div>
+
+    <div class="row align-items-center">
+      <!-- Левая колонка: форма -->
+      <div class="col-md-6">
+        <div class="form-box p-4 shadow-sm rounded-4">
+          <h5 class="fw-semibold mb-3">Ваша новая кухня без денег и предоплаты!</h5>
+
+          <ul class="list-unstyled d-flex flex-wrap gap-4 small-info mb-4">
+            <li class="d-flex align-items-center gap-2">
+              <span class="dot"></span>Рассрочка 12 Месяцев
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <span class="dot"></span><strong>Без Комиссии И Процентов</strong>
+            </li>
+          </ul>
+
+          <form class="calculator-form">
+            <div class="mb-3">
+              <label class="form-label">Ваш Бюджет € :</label>
+              <input id="budget" type="number" class="form-control" value="3000">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Промежуток Рассрочки В Месяцах :</label>
+              <input id="months" type="number" class="form-control" value="6">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Первоначальный Взнос % :</label>
+              <input id="downPayment" type="text" class="form-control" value="10%">
+            </div>
+
+            <div class="monthly-payment-box d-flex justify-content-between align-items-center mb-4 px-3 py-2">
+              <strong>ЕЖЕМЕСЯЧНЫЙ ПЛАТЁЖ:</strong>
+              <strong id="paymentResult">450.00 €</strong>
+            </div>
+
+            <div class="row mb-4">
+              <div class="col-md-6 mb-3 mb-md-0">
+                <input type="text" class="form-control" placeholder="Ваш Имя:">
+              </div>
+              <div class="col-md-6">
+                <input type="tel" class="form-control" placeholder="Ваш Телефон:">
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-warning w-100 text-dark fw-bold py-2">
+              Отправить Заявку На Рассрочку
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Правая колонка: изображение -->
+      <div class="col-md-6 text-center mt-4 mt-md-0">
+        <img src="image/RS.png" alt="Женщина на кухне" class="img-fluid rounded-4 shadow-sm">
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Секция "Процесс работы" -->
+    <div class="container">
+      <h2 class="text-center fw-bold mb-2">Как выстроен процесс работы с нашими клиентами</h2>
+      <div class="text-center mb-4">
+        <div class="yellow-divider"></div>
+      </div>
+    </div>
+
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Слайд -->
+        <div class="swiper-slide">
+          <img src="image/KE1.png" alt="Шаг 1">
+          <div class="slide-caption">
+            <h5>1 — Запись</h5>
+            <p>Запишитесь на консультацию по телефону или онлайн</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="image/KE2.png" alt="Шаг 2">
+          <div class="slide-caption">
+            <h5>2 — Замер</h5>
+            <p>Снимем замеры и подготовим рекомендации</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="image/KE3.png" alt="Шаг 3">
+          <div class="slide-caption">
+            <h5>3 — Дизайн</h5>
+            <p>Дизайнер разработает проект по вашим пожеланиям</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="image/KE4.png" alt="Шаг 4">
+          <div class="slide-caption">
+            <h5>4 — Производство</h5>
+            <p>Срок изготовления кухни от 25 дней</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="image/KE5.png" alt="Шаг 5">
+          <div class="slide-caption">
+            <h5>5 — Монтаж</h5>
+            <p>Качественно установим мебель и встроим технику</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Секция "Наша команда" -->
+ <section class="team-section">
+    <h2>Доверьте вашу кухню<br><span>профессионалам</span></h2>
+
+    <div class="team-members">
+      <div class="member">
+        <div class="ellipse" onclick="flip(this)">
+          <div class="inner">
+            <img src="image/PR1.png" alt="Татьяна" class="front">
+            <div class="back">
+              <img src="image/logo.png" alt="Логотип">
+            </div>
+          </div>
+        </div>
+        <h3>Татьяна</h3>
+        <p class="position">Дизайнер</p>
+        <p class="desc">Любит нестандартные и яркие проекты.</p>
+      </div>
+
+      <div class="member">
+        <div class="ellipse" onclick="flip(this)">
+          <div class="inner">
+            <img src="image/PR2.png" alt="Светлана" class="front">
+            <div class="back">
+              <img src="image/logo.png" alt="Логотип">
+            </div>
+          </div>
+        </div>
+        <h3>Светлана</h3>
+        <p class="position">Дизайнер</p>
+        <p class="desc">20 лет опыта работы на крупнейших фабриках.</p>
+      </div>
+
+      <div class="member">
+        <div class="ellipse" onclick="flip(this)">
+          <div class="inner">
+            <img src="image/PR3.png" alt="Кристиан" class="front">
+            <div class="back">
+              <img src="image/logo.png" alt="Логотип">
+            </div>
+          </div>
+        </div>
+        <h3>Кристиан</h3>
+        <p class="position">Дизайнер</p>
+        <p class="desc">Художник, делает акцент на эстетике кухни.</p>
+      </div>
+    </div>
+  </section>
+
+    <!-- Секция "Блог" -->
+    <section class="container py-5">
+      <h2 class="text-center mb-2 section-title">Блог</h2>
+      <div class="yellow-divider"></div>
+      <div class="section-line mx-auto mb-4"></div>
+
+      <div class="row g-4">
+        <!-- Карточка 1 -->
+        <div class="col-md-4 reveal">
+          <div class="card h-100 shadow-sm">
+            <img src="image/BG1.png" class="card-img-top" alt="Картинка 1">
+            <div class="card-body">
+              <p class="text-muted small">Март 11, 2022</p>
+              <h5 class="card-title">Из чего складывается стоимость кухни?</h5>
+              <p class="card-text">рассказывает дизайнер Светлана</p>
+              <a href="#" class="btn-link-custom">Прочесть за 7 минут</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 2 -->
+        <div class="col-md-4 reveal">
+          <div class="card h-100 shadow-sm">
+            <img src="image/BG2.png" class="card-img-top" alt="Картинка 2">
+            <div class="card-body">
+              <p class="text-muted small">Март 11, 2022</p>
+              <h5 class="card-title">Из чего складывается стоимость кухни?</h5>
+              <p class="card-text">рассказывает дизайнер Светлана</p>
+              <a href="#" class="btn-link-custom">Прочесть за 7 минут</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 3 -->
+        <div class="col-md-4 reveal">
+          <div class="card h-100 shadow-sm">
+            <img src="image/BG3.png" class="card-img-top" alt="Картинка 3">
+            <div class="card-body">
+              <p class="text-muted small">Март 11, 2022</p>
+              <h5 class="card-title">Из чего складывается стоимость кухни?</h5>
+              <p class="card-text">рассказывает дизайнер Светлана</p>
+              <a href="#" class="btn-link-custom">Прочесть за 7 минут</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Секция "Форма заявки" -->
+    <section class="contact-form-section" style="background-image: url('image/ZA.png');">
+      <div class="container contact-form-content text-center">
+        <h2 class="contact-form-title">
+          Получите бесплатно дизайн проект кухни<br>и консультацию дизайнера
+        </h2>
+        <p class="contact-form-text">
+          Вы узнаете точную <strong>стоимость вашей кухни</strong> и получите <span style="color: #a04d00;">3D-проект</span>
+        </p>
+        <form class="row g-3 justify-content-center">
+          <div class="col-md-8">
+            <input type="tel" class="form-control form-input" placeholder="+375 (__) ___-__-__" id="phoneInput">
+          </div>
+          <div class="col-md-4">
+            <button type="submit" class="btn custom-btn btn-lg w-100">Записаться</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-12 mb-3">
+  <div id="drop-zone" class="drop-zone">
+    <span class="drop-zone__prompt">Перетащите сюда план помещения (Drag & Drop)</span>
+    <input type="file" name="myFile" class="drop-zone__input">
+  </div>
+</div>
+    </section>
+
+    <!-- Футер -->
+<footer class="footer">
+  <div class="container">
+    <div class="row align-items-start">
+      <!-- Левая колонка -->
+      <div class="col-md-3 mb-4">
+        <div class="footer-logo mb-4">
+          <img src="https://c.animaapp.com/mb6e6uyr72SZ5R/img/logo-en-black-2-1.png" alt="Amatto" width="140">
+        </div>
+
+        <div class="social-icons mb-3">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+          <a href="#"><i class="bi bi-whatsapp"></i></a>
+        </div>
+
+        <div class="footer-dropdown">
+          <button onclick="toggleDropdown(this)">Links</button>
+          <div class="footer-dropdown-content">
+            <ul class="footer-menu">
+              <li><a href="#">Главная</a></li>
+              <li><a href="#">О Нас</a></li>
+              <li><a href="#">Каталог</a></li>
+              <li><a href="#">Рассрочка</a></li>
+              <li><a href="#">Блог</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Правая колонка с адресами -->
+      <div class="col-md-9 mb-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+          <!-- 5 адресов -->
+          <div class="col">
+            <div class="footer-dropdown">
+              <button onclick="toggleDropdown(this)">Republic Of Moldova</button>
+              <div class="footer-dropdown-content contact-block">
+                <p><i class="bi bi-geo-alt"></i> Chisinau, 15/2 Trandafirilor Str.</p>
+                <p><i class="bi bi-telephone"></i> +373 68 159 759</p>
+                <p><i class="bi bi-envelope"></i> hello@amatto.md</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="footer-dropdown">
+              <button onclick="toggleDropdown(this)">Republic Of Moldova</button>
+              <div class="footer-dropdown-content contact-block">
+                <p><i class="bi bi-geo-alt"></i> Chisinau, 10 Stefan cel Mare Blvd.</p>
+                <p><i class="bi bi-telephone"></i> +373 60 123 456</p>
+                <p><i class="bi bi-envelope"></i> contact@amatto.md</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="footer-dropdown">
+              <button onclick="toggleDropdown(this)">Republic Of Moldova</button>
+              <div class="footer-dropdown-content contact-block">
+                <p><i class="bi bi-geo-alt"></i> Balti, 5 Independentei St.</p>
+                <p><i class="bi bi-telephone"></i> +373 69 111 222</p>
+                <p><i class="bi bi-envelope"></i> balti@amatto.md</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="footer-dropdown">
+              <button onclick="toggleDropdown(this)">Republic Of Moldova</button>
+              <div class="footer-dropdown-content contact-block">
+                <p><i class="bi bi-geo-alt"></i> Cahul, 2 Libertatii Ave.</p>
+                <p><i class="bi bi-telephone"></i> +373 67 333 444</p>
+                <p><i class="bi bi-envelope"></i> cahul@amatto.md</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="footer-dropdown">
+              <button onclick="toggleDropdown(this)">Republic Of Moldova</button>
+              <div class="footer-dropdown-content contact-block">
+                <p><i class="bi bi-geo-alt"></i> Orhei, 8 M. Eminescu Str.</p>
+                <p><i class="bi bi-telephone"></i> +373 68 555 666</p>
+                <p><i class="bi bi-envelope"></i> orhei@amatto.md</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Копирайт -->
+    <div class="text-center mt-4">
+      <small>© 2022 Amatto. All Rights Reserved.</small>
+    </div>
+  </div>
+</footer>
+
+    <!-- HTML для виджета (добавьте перед закрывающим </body>) -->
+<div id="chat-widget" class="chat-widget">
+  <div class="chat-header">
+    <div class="header-content">
+      <div class="avatar">S</div>
+      <div>
+        <h5>Поддержка</h5>
+        <div class="status online">Online</div>
+      </div>
+    </div>
+    <button class="close-btn">×</button>
+  </div>
+  <div class="chat-body">
+    <div class="messages"></div>
+  </div>
+  <div class="chat-footer">
+    <input type="text" class="message-input" placeholder="Напишите сообщение...">
+    <button class="send-btn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<button id="chat-trigger" class="chat-trigger">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" 
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<button id="scroll-toggle" class="scroll-arrow" aria-label="Scroll button">
+  <i class="bi bi-chevron-down icon-fade"></i>
+</button>
+
+  <script>
+    function flip(element) {
+      element.classList.toggle("flipped");
+      console.log("Работает!");
+    }
+  </script>
+
+    <!-- Подключение скриптов -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="script.js"></script>
+<!-- 1. КОРЗИНА -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-light">
+        <h5 class="modal-title fw-bold">🛒 Корзина</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table align-middle">
+            <thead class="table-light"><tr><th>Товар</th><th>Цена</th><th>Действие</th></tr></thead>
+            <tbody id="cartItemsContainer"></tbody>
+        </table>
+        <div class="text-end mt-3">
+            <h4>Итого: <span id="cartTotal" class="text-warning fw-bold">0</span> лей</h4>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Назад</button>
+        <button class="btn btn-primary rounded-pill px-4" id="btnInitCheckout">Оформить заказ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. ГОСТЬ (ВХОД / РЕГИСТРАЦИЯ) -->
+<div class="modal fade" id="guestModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered">
+    <div class="modal-content text-center">
+      <div class="modal-header border-0 justify-content-center">
+        <ul class="nav nav-pills" role="tablist">
+            <li class="nav-item"><button class="nav-link active rounded-pill" data-bs-target="#tabLogin" data-bs-toggle="pill">Вход</button></li>
+            <li class="nav-item"><button class="nav-link rounded-pill" data-bs-target="#tabRegister" data-bs-toggle="pill">Регистрация</button></li>
+        </ul>
+        <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="tab-content">
+            
+            <!-- ФОРМА ВХОДА -->
+            <div class="tab-pane fade show active" id="tabLogin">
+                <form id="loginForm">
+                    <div class="mb-3 text-start">
+                        <input type="email" id="loginEmail" name="loginEmail" class="form-control rounded-pill" placeholder="Email" required>
+                    </div>
+                    <div class="mb-3 text-start">
+                        <input type="password" id="loginPassword" name="loginPassword" class="form-control rounded-pill" placeholder="Пароль" required>
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100 rounded-pill">Войти</button>
+                </form>
+            </div>
+
+            <!-- ФОРМА РЕГИСТРАЦИИ (ИСПРАВЛЕНА ПОД ТВОЙ ЧЕК-ЛИСТ) -->
+            <div class="tab-pane fade" id="tabRegister">
+                <form id="registerForm">
+                    <!-- Имя: добавлено name="regName" и тег small -->
+                    <div class="mb-2 text-start">
+                        <input type="text" id="regName" name="regName" class="form-control rounded-pill" placeholder="Ваше Имя" required>
+                        <small class="text-danger ms-2 fw-bold" style="font-size:11px"></small>
+                    </div>
+
+                    <!-- Email: добавлено name="regEmail" и тег small -->
+                    <div class="mb-2 text-start">
+                        <input type="email" id="regEmail" name="regEmail" class="form-control rounded-pill" placeholder="Email" required>
+                        <small class="text-danger ms-2 fw-bold" style="font-size:11px"></small>
+                    </div>
+
+                    <!-- Пароль: добавлено name="regPassword" и тег small -->
+                    <div class="mb-3 text-start">
+                        <input type="password" id="regPassword" name="regPassword" class="form-control rounded-pill" placeholder="Пароль (min 6, a-z + 0-9)" required>
+                        <small class="text-danger ms-2 fw-bold" style="font-size:11px"></small>
+                    </div>
+
+                    <!-- Кнопка submit -->
+                    <button type="submit" class="btn btn-warning w-100 rounded-pill">Создать аккаунт</button>
+                </form>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. ПРОФИЛЬ (Modern Design + Phone) -->
+<div class="modal fade" id="profileModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg">
+      
+
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-bold">
+            <span class="text-warning me-2">●</span>Личный кабинет
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body pt-2">
+   
+        <div class="d-flex align-items-center mb-4 p-3 bg-light rounded-4">
+            <div class="bg-white p-2 rounded-circle shadow-sm me-3 text-warning">
+                <i class="fa fa-user-circle fa-2x"></i>
+            </div>
+            <div>
+                <small class="text-muted d-block">Вы авторизованы как:</small>
+                <strong id="profileUsernameDisplay" class="fs-5">User</strong>
+            </div>
+        </div>
+        
+        <form id="personalDataForm">
+            <h6 class="text-uppercase text-muted small fw-bold mb-3">Контактные данные</h6>
+            
+       
+            <div class="form-floating mb-2">
+                <input type="text" class="form-control rounded-4" id="pdFIO" placeholder="ФИО">
+                <label for="pdFIO">ФИО</label>
+            </div>
+
+   
+            <div class="row g-2 mb-2">
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="email" class="form-control rounded-4" id="pdEmail" placeholder="Email">
+                        <label for="pdEmail">Email</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="tel" class="form-control rounded-4" id="pdPhone" placeholder="Телефон">
+                        <label for="pdPhone">Телефон</label>
+                    </div>
+                </div>
+            </div>
+
+      
+            <div class="row g-2 mb-4">
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="text" class="form-control rounded-4" id="pdPlace" placeholder="Город">
+                        <label for="pdPlace">Город / Адрес</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="date" class="form-control rounded-4" id="pdDob" placeholder="Дата рождения">
+                        <label for="pdDob">Дата рождения</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Блок управления данными (ЛР 20)  -->
+            <div class="p-3 border rounded-4 bg-light">
+                <h6 class="text-uppercase text-muted small fw-bold mb-2">
+                    <i class="fa fa-database"></i> Управление данными (ЛР 20)
+                </h6>
+                <div class="row g-2">
+                    <div class="col-6">
+                        <div class="btn-group w-100" role="group">
+                            <button type="button" id="btnSaveCookie" class="btn btn-outline-warning btn-sm fw-bold">Cookie ⬇</button>
+                            <button type="button" id="btnLoadCookie" class="btn btn-outline-warning btn-sm">⬆</button>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="btn-group w-100" role="group">
+                            <button type="button" id="btnSaveLS" class="btn btn-outline-success btn-sm fw-bold">Local ⬇</button>
+                            <button type="button" id="btnLoadLS" class="btn btn-outline-success btn-sm">⬆</button>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="btnClearData" class="btn btn-link text-danger w-100 btn-sm text-decoration-none mt-1">
+                    <i class="fa fa-trash"></i> Очистить хранилище
+                </button>
+            </div>
+        </form>
+      </div>
+
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-light rounded-pill px-4" data-bs-dismiss="modal">Закрыть</button>
+        <button type="button" id="btnLogout" class="btn btn-dark rounded-pill px-4">Выйти</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. ОФОРМЛЕНИЕ -->
+<div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title">✅ Подтверждение</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="finalOrderForm">
+            <div class="mb-3">
+                <label>Получатель</label>
+                <input type="text" id="orderName" class="form-control rounded-pill" required>
+            </div>
+            <div class="mb-3">
+                <label>Email</label>
+                <input type="email" id="orderEmail" class="form-control rounded-pill" required>
+            </div>
+            <h4 class="text-end mt-4">Итого: <span id="checkoutTotal">0</span> лей</h4>
+            <button type="submit" class="btn btn-success w-100 mt-3 rounded-pill py-2">ПОДТВЕРДИТЬ ЗАКАЗ</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
